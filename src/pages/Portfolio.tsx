@@ -6,9 +6,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import { useInView } from "react-intersection-observer";
 
 // Displays an animated octagonal progress bar for a skill
 const OctagonSkill = ({ label, percent }: { label: string; percent: number }) => {
+  // Enable smooth progress animation when the skill enters the viewport
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.25 });
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -36,17 +40,15 @@ const OctagonSkill = ({ label, percent }: { label: string; percent: number }) =>
             }}
           />
           {/* Progress fill using conic-gradient masked to octagon */}
-          <motion.div
+          <div
+            ref={ref}
             className="absolute inset-0"
-            initial={{ "--deg": "0deg" } as React.CSSProperties}
-            whileInView={{ "--deg": `${percent * 3.6}deg` } as any}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
             style={{
-              background:
-                "conic-gradient(var(--primary) var(--deg), oklch(0.9 0.01 264) var(--deg))",
+              ["--deg" as any]: `${inView ? percent * 3.6 : 0}deg`,
+              background: `conic-gradient(var(--primary) var(--deg), oklch(0.9 0.01 264) var(--deg))`,
+              transition: "var(--deg) 1.2s ease-in-out",
               mixBlendMode: "normal",
-            }}
+            } as React.CSSProperties}
           />
           {/* Inner cutout to create a ring */}
           <div
