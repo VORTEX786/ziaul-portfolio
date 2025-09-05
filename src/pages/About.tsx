@@ -92,7 +92,7 @@ export default function About() {
               </span>
             </div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover my journey from a curious student in Fiji to an aspiring AI engineer 
+              Discover my journey from a curious student in Fiji to an AI and Software Engineer 
               with a passion for technology and innovation.
             </p>
           </motion.div>
