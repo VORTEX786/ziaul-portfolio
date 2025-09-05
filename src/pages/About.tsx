@@ -269,9 +269,7 @@ export default function About() {
                       Academic Pursuits
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      I plan to study artificial intelligence at the University of the South Pacific, 
-                      focusing on machine learning, neural networks, and advanced AI applications. 
-                      I'm particularly interested in pure mathematics and physics at the Year 13 level.
+                      I want to study artificial intelligence and software engineering, focusing on machine learning, neural networks, and building robust software systems.
                     </p>
                   </div>
                   <div>
