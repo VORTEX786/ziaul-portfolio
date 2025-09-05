@@ -38,7 +38,7 @@ export default function Landing() {
               <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-6">
                 Hi, I'm{" "}
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Mohammed Ziaul
+                  Mohammed Ziaul Kamaal
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -181,7 +181,7 @@ export default function Landing() {
       {/* Footer */}
       <footer className="border-t py-8 px-4">
         <div className="max-w-6xl mx-auto text-center text-muted-foreground">
-          <p>&copy; 2025 Mohammed Ziaul. All rights reserved.</p>
+          <p>&copy; 2025 Mohammed Ziaul Kamaal. All rights reserved.</p>
         </div>
       </footer>
     </div>

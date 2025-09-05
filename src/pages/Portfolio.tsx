@@ -1,11 +1,88 @@
 import { motion } from "framer-motion";
-import { Code, Gamepad2, Plus } from "lucide-react";
+import { Code, Gamepad2 } from "lucide-react";
 import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import AnimatedBackground from "@/components/AnimatedBackground";
+
+// Displays an animated octagonal progress bar for a skill
+const OctagonSkill = ({ label, percent }: { label: string; percent: number }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="flex flex-col items-center gap-3 p-4 rounded-xl border bg-background hover:bg-accent/5 transition-colors"
+    >
+      <div className="relative">
+        {/* Octagon container */}
+        <div
+          className="w-32 h-32 sm:w-36 sm:h-36 relative transition-all"
+          style={{
+            clipPath:
+              "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
+            filter:
+              "drop-shadow(0 0 10px color-mix(in oklab, var(--primary), transparent 85%))",
+          }}
+        >
+          {/* Background track */}
+          <div className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to bottom right, oklch(0.96 0.01 264), oklch(0.9 0.01 264))",
+            }}
+          />
+          {/* Progress fill using conic-gradient masked to octagon */}
+          <motion.div
+            className="absolute inset-0"
+            initial={{ "--deg": "0deg" } as React.CSSProperties}
+            whileInView={{ "--deg": `${percent * 3.6}deg` } as any}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+            style={{
+              background:
+                "conic-gradient(var(--primary) var(--deg), oklch(0.9 0.01 264) var(--deg))",
+              mixBlendMode: "normal",
+            }}
+          />
+          {/* Inner cutout to create a ring */}
+          <div
+            className="absolute inset-2 sm:inset-3 bg-background"
+            style={{
+              clipPath:
+                "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
+            }}
+          />
+          {/* Inner subtle glow on hover */}
+          <div
+            className="absolute inset-0 pointer-events-none transition-[box-shadow]"
+            style={{
+              clipPath:
+                "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
+              boxShadow:
+                "0 0 0 1px color-mix(in oklab, var(--primary), transparent 70%), inset 0 0 20px color-mix(in oklab, var(--primary), transparent 90%)",
+            }}
+          />
+          {/* Center percentage text */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-lg sm:text-xl font-bold">
+              {percent}%
+            </span>
+          </div>
+        </div>
+        {/* Hover glow */}
+        <div className="absolute inset-0 blur-xl opacity-0 hover:opacity-100 transition-opacity -z-10"
+             style={{ background: "radial-gradient(closest-side, color-mix(in oklab, var(--primary), transparent 70%), transparent)" }} />
+      </div>
+      <div className="text-center">
+        <p className="text-sm sm:text-base font-medium">{label}</p>
+      </div>
+    </motion.div>
+  );
+};
 
 export default function Portfolio() {
   const projects = useQuery(api.projects.list);
@@ -181,31 +258,24 @@ export default function Portfolio() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Card className="p-8 bg-gradient-to-r from-primary/5 to-accent/5 border-dashed">
-              <CardContent className="text-center">
-                <Plus className="h-16 w-16 mx-auto mb-6 text-muted-foreground" />
-                <h2 className="text-3xl font-bold mb-4">Future Projects</h2>
-                <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  This space is reserved for the amazing projects I'll build during my university 
-                  studies in artificial intelligence. Stay tuned for AI applications, machine learning 
-                  models, and innovative software solutions!
-                </p>
-                <div className="flex flex-wrap justify-center gap-4">
-                  <Badge variant="outline" className="text-sm py-2 px-4">
-                    Machine Learning
-                  </Badge>
-                  <Badge variant="outline" className="text-sm py-2 px-4">
-                    Neural Networks
-                  </Badge>
-                  <Badge variant="outline" className="text-sm py-2 px-4">
-                    Web Applications
-                  </Badge>
-                  <Badge variant="outline" className="text-sm py-2 px-4">
-                    Mobile Apps
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold">Skills & Proficiency</h2>
+              <p className="text-muted-foreground mt-2">
+                A modern, responsive display of my core skills using animated octagonal progress.
+              </p>
+            </div>
+
+            {/* Skills Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              <OctagonSkill label="Python Programming" percent={90} />
+              <OctagonSkill label="Game Development (Pygame)" percent={80} />
+              <OctagonSkill label="Web Development (HTML, CSS, JS)" percent={65} />
+              <OctagonSkill label="Mathematics (Pure Maths)" percent={95} />
+              <OctagonSkill label="Physics" percent={75} />
+              <OctagonSkill label="Problem Solving & Logic" percent={90} />
+              <OctagonSkill label="Leadership & Communication" percent={85} />
+              <OctagonSkill label="Creativity & Design (Logo/Graphics)" percent={85} />
+            </div>
           </motion.section>
         </div>
       </div>
@@ -213,7 +283,7 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="border-t py-8 px-4">
         <div className="max-w-6xl mx-auto text-center text-muted-foreground">
-          <p>&copy; 2025 Mohammed Ziaul. All rights reserved.</p>
+          <p>&copy; 2025 Mohammed Ziaul Kamaal. All rights reserved.</p>
         </div>
       </footer>
     </div>

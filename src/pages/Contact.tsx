@@ -253,7 +253,7 @@ export default function Contact() {
       {/* Footer */}
       <footer className="border-t py-8 px-4">
         <div className="max-w-6xl mx-auto text-center text-muted-foreground">
-          <p>&copy; 2025 Mohammed Ziaul. All rights reserved.</p>
+          <p>&copy; 2025 Mohammed Ziaul Kamaal. All rights reserved.</p>
         </div>
       </footer>
     </div>

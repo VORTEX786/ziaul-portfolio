@@ -25,7 +25,7 @@ export default function Navigation() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="font-bold text-xl tracking-tight">
-            Mohammed Ziaul
+            Mohammed Ziaul Kamaal
           </Link>
 
           {/* Desktop Navigation */}
