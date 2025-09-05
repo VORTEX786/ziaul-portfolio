@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Send, MapPin, Phone } from "lucide-react";
+import { Mail, Github, Instagram, Send, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
@@ -52,10 +52,10 @@ export default function Contact() {
       color: "hover:text-gray-900 dark:hover:text-gray-100"
     },
     {
-      name: "LinkedIn",
-      icon: Linkedin,
-      url: "https://linkedin.com/in/mohammedziaul",
-      color: "hover:text-blue-600"
+      name: "Instagram",
+      icon: Instagram,
+      url: "https://instagram.com/op_xvortex",
+      color: "hover:text-pink-500"
     },
     {
       name: "Email",
