@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Code, Gamepad2, Plus } from "lucide-react";
+import { Code, Gamepad2, Plus } from "lucide-react";
 import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
@@ -121,20 +120,6 @@ export default function Portfolio() {
                           </Badge>
                         ))}
                       </div>
-                      <div className="flex space-x-2 pt-4">
-                        {project.githubUrl && (
-                          <Button size="sm" variant="outline" className="flex-1">
-                            <Github className="h-4 w-4 mr-2" />
-                            Code
-                          </Button>
-                        )}
-                        {project.liveUrl && (
-                          <Button size="sm" className="flex-1">
-                            <ExternalLink className="h-4 w-4 mr-2" />
-                            Live Demo
-                          </Button>
-                        )}
-                      </div>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -176,22 +161,10 @@ export default function Portfolio() {
                         <p className="text-muted-foreground text-sm mb-4">
                           {project.description}
                         </p>
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-center justify-start">
                           <span className="text-sm font-medium text-primary">
                             {project.technology}
                           </span>
-                          <div className="flex space-x-2">
-                            {project.githubUrl && (
-                              <Button size="sm" variant="ghost">
-                                <Github className="h-4 w-4" />
-                              </Button>
-                            )}
-                            {project.liveUrl && (
-                              <Button size="sm" variant="ghost">
-                                <ExternalLink className="h-4 w-4" />
-                              </Button>
-                            )}
-                          </div>
                         </div>
                       </CardContent>
                     </Card>
