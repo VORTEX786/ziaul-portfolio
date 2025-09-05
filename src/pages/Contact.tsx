@@ -60,7 +60,7 @@ export default function Contact() {
     {
       name: "Email",
       icon: Mail,
-      url: "mailto:mohammed.ziaul@example.com",
+      url: "mailto:ziaul914191@gamil.com",
       color: "hover:text-red-500"
     }
   ];
@@ -188,7 +188,7 @@ export default function Contact() {
                     <div>
                       <p className="font-medium">Email</p>
                       <p className="text-muted-foreground text-sm">
-                        mohammed.ziaul@example.com
+                        ziaul914191@gamil.com
                       </p>
                     </div>
                   </div>
