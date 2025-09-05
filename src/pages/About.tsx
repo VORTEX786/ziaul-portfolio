@@ -86,6 +86,11 @@ export default function About() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-bold tracking-tight mb-6">About Me</h1>
+            <div className="inline-flex items-center justify-center mx-auto mb-3">
+              <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                Software & AI Engineer
+              </span>
+            </div>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Discover my journey from a curious student in Fiji to an aspiring AI engineer 
               with a passion for technology and innovation.
