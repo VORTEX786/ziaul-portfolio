@@ -48,7 +48,7 @@ export default function Contact() {
     {
       name: "GitHub",
       icon: Github,
-      url: "https://github.com/mohammedziaul",
+      url: "https://github.com/VORTEX786",
       color: "hover:text-gray-900 dark:hover:text-gray-100"
     },
     {
