@@ -10,7 +10,7 @@ export default function About() {
     { year: "2019", event: "Completed Primary Education", icon: Award },
     { year: "2020-2023", event: "Secondary School Journey", icon: Calendar },
     { year: "2024", event: "Year 12 Certificate - 348/400 marks", icon: Award },
-    { year: "2025", event: "Pursuing AI at University of the South Pacific", icon: Target },
+    { year: "2025", event: "Is schooling in Year 13", icon: Target },
   ];
 
   const projects = [
