@@ -67,7 +67,7 @@ export default function Landing() {
               <div className="relative">
                 <div className="w-80 h-80 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center">
                   <div className="w-64 h-64 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white text-8xl font-bold">
-                    MZ
+                    MZK
                   </div>
                 </div>
                 <motion.div
