@@ -40,6 +40,37 @@ export default function About() {
     }
   ];
 
+  const achievements = [
+    {
+      title: "National Logo Design Competition Winner",
+      subtitle: "Insurance Association of Fiji",
+      description:
+        "Designed the winning logo at the national level, showcasing creativity, innovation, and design skills.",
+      icon: Award,
+    },
+    {
+      title: "Head Boy",
+      subtitle: "2025, Valebasoga Secondary School",
+      description:
+        "Leading the student body in my final year, coordinating prefect duties, representing the school at official events, and mentoring younger students.",
+      icon: Award,
+    },
+    {
+      title: "Deputy Head Boy",
+      subtitle: "2024, Valebasoga Secondary School",
+      description:
+        "Assisted the Head Boy in leadership responsibilities, maintained discipline, and supported student engagement across activities.",
+      icon: Award,
+    },
+    {
+      title: "Prefect Leadership",
+      subtitle: "Earlier Years",
+      description:
+        "Served as a prefect before my deputy and head roles, developing responsibility, discipline, and communication skills.",
+      icon: Award,
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -127,6 +158,50 @@ export default function About() {
                             <div className="text-lg font-semibold">{item.event}</div>
                           </div>
                         </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.section>
+
+          {/* Achievements */}
+          <motion.section
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-20"
+          >
+            <h2 className="text-3xl font-bold text-center mb-12">Achievements</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {achievements.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <Card className="h-full hover:shadow-lg transition-shadow">
+                      <CardHeader>
+                        <CardTitle className="flex items-center gap-3">
+                          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10">
+                            <Icon className="h-5 w-5 text-primary" />
+                          </span>
+                          <div className="flex flex-col">
+                            <span>{item.title}</span>
+                            <span className="text-sm font-normal text-primary/80">
+                              {item.subtitle}
+                            </span>
+                          </div>
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-muted-foreground">{item.description}</p>
                       </CardContent>
                     </Card>
                   </motion.div>
