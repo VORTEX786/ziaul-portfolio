@@ -101,16 +101,6 @@ export default function Portfolio() {
       imageUrl: "🐦"
     },
     {
-      title: "Tic Tac Toe",
-      description: "Interactive strategy game with AI opponent and multiplayer modes. Implements minimax algorithm for challenging AI gameplay.",
-      technology: "Python",
-      category: "Game Development",
-      featured: false,
-      githubUrl: "#",
-      liveUrl: "#",
-      imageUrl: "⭕"
-    },
-    {
       title: "Chess Game",
       description: "Full-featured chess implementation with move validation, check detection, and complete game logic following official chess rules.",
       technology: "Python",
@@ -119,16 +109,6 @@ export default function Portfolio() {
       githubUrl: "#",
       liveUrl: "#",
       imageUrl: "♟️"
-    },
-    {
-      title: "Starship vs Aliens",
-      description: "Advanced space shooter with multiple levels, boss battles, power-ups, and progressive difficulty. Features particle effects and smooth animations.",
-      technology: "Python, Pygame",
-      category: "Advanced Game Development",
-      featured: true,
-      githubUrl: "#",
-      liveUrl: "#",
-      imageUrl: "🚀"
     }
   ];
 
