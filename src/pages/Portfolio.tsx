@@ -119,6 +119,16 @@ export default function Portfolio() {
       githubUrl: "#",
       liveUrl: "#",
       imageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/a3de1e67-8169-4bbf-8c84-ced6f72e6b0c"
+    },
+    {
+      title: "JARVIS - AI Voice Assistant",
+      description: "An advanced AI-powered voice assistant inspired by Iron Man's JARVIS. Features real-time voice recognition, natural language processing, system monitoring, and conversational AI capabilities.",
+      technology: "Python, Speech Recognition, AI/ML, Natural Language Processing",
+      category: "Artificial Intelligence",
+      featured: true,
+      githubUrl: "#",
+      liveUrl: "#",
+      imageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/1512be03-86e4-430e-94e6-55eea4eae171"
     }
   ];
 
