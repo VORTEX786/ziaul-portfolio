@@ -108,7 +108,7 @@ export default function Portfolio() {
       featured: true,
       githubUrl: "#",
       liveUrl: "#",
-      imageUrl: "♟️"
+      imageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/932baa4f-962e-48ae-9966-b89080c7d874"
     }
   ];
 
