@@ -178,12 +178,19 @@ export default function Portfolio() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+                  <Card className="h-full hover:shadow-lg transition-all duration-300 group overflow-hidden">
                     <CardHeader>
                       <div className="flex items-center justify-between mb-4">
-                        <div className={project.imageUrl?.startsWith('http') ? "w-full h-32 overflow-hidden rounded-md" : "text-4xl"}>
+                        <div className={project.imageUrl?.startsWith('http') ? "w-full h-32 overflow-hidden rounded-md relative group" : "text-4xl"}>
                           {project.imageUrl?.startsWith('http') ? (
-                            <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover" />
+                            <>
+                              <img 
+                                src={project.imageUrl} 
+                                alt={project.title} 
+                                className="w-full h-full object-cover transition-all duration-300 group-hover:scale-150 group-hover:z-50 cursor-pointer" 
+                              />
+                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 pointer-events-none" />
+                            </>
                           ) : (
                             project.imageUrl || "🎮"
                           )}
