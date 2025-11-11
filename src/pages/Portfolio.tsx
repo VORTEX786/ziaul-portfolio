@@ -109,6 +109,16 @@ export default function Portfolio() {
       githubUrl: "#",
       liveUrl: "#",
       imageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/932baa4f-962e-48ae-9966-b89080c7d874"
+    },
+    {
+      title: "Zahrati Study Tracker",
+      description: "A comprehensive study tracking application with focus time management, study ratio analytics, streak tracking, and gamification features including levels and badges.",
+      technology: "React, TypeScript, Tailwind CSS",
+      category: "Web Development",
+      featured: true,
+      githubUrl: "#",
+      liveUrl: "#",
+      imageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/a3de1e67-8169-4bbf-8c84-ced6f72e6b0c"
     }
   ];
 
