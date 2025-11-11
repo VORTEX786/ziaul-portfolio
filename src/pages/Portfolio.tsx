@@ -98,7 +98,7 @@ export default function Portfolio() {
       featured: true,
       githubUrl: "#",
       liveUrl: "#",
-      imageUrl: "🐦"
+      imageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/be0729bc-11b3-4120-ad3e-94cbb60c8a2d"
     },
     {
       title: "Chess Game",
@@ -161,9 +161,16 @@ export default function Portfolio() {
                   <Card className="h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
                     <CardHeader>
                       <div className="flex items-center justify-between mb-4">
-                        <div className="text-4xl">{project.imageUrl}</div>
-                        <Badge variant="secondary">{project.category}</Badge>
+                        <div className={project.imageUrl?.startsWith('http') ? "w-full h-32 overflow-hidden rounded-md" : "text-4xl"}>
+                          {project.imageUrl?.startsWith('http') ? (
+                            <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover" />
+                          ) : (
+                            project.imageUrl || "🎮"
+                          )}
+                        </div>
+                        {!project.imageUrl?.startsWith('http') && <Badge variant="secondary">{project.category}</Badge>}
                       </div>
+                      {project.imageUrl?.startsWith('http') && <Badge variant="secondary" className="mb-2">{project.category}</Badge>}
                       <CardTitle className="group-hover:text-primary transition-colors">
                         {project.title}
                       </CardTitle>
