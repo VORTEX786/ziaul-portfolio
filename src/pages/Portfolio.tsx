@@ -177,19 +177,28 @@ export default function Portfolio() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
+                  className="group relative"
                 >
-                  <Card className="h-full hover:shadow-lg transition-all duration-300 group overflow-hidden">
+                  <Card className="h-full hover:shadow-lg transition-all duration-300">
                     <CardHeader>
                       <div className="flex items-center justify-between mb-4">
-                        <div className={project.imageUrl?.startsWith('http') ? "w-full h-32 overflow-hidden rounded-md relative group" : "text-4xl"}>
+                        <div className={project.imageUrl?.startsWith('http') ? "w-full h-32 overflow-hidden rounded-md relative cursor-pointer" : "text-4xl"}>
                           {project.imageUrl?.startsWith('http') ? (
                             <>
                               <img 
                                 src={project.imageUrl} 
                                 alt={project.title} 
-                                className="w-full h-full object-cover transition-all duration-300 group-hover:scale-150 group-hover:z-50 cursor-pointer" 
+                                className="w-full h-full object-cover transition-all duration-300" 
                               />
-                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 pointer-events-none" />
+                              {/* Full image overlay on hover */}
+                              <div className="fixed inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-40" />
+                              <div className="fixed inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50">
+                                <img 
+                                  src={project.imageUrl} 
+                                  alt={project.title} 
+                                  className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl" 
+                                />
+                              </div>
                             </>
                           ) : (
                             project.imageUrl || "🎮"
