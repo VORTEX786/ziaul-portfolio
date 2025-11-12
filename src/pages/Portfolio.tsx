@@ -129,6 +129,16 @@ export default function Portfolio() {
       githubUrl: "#",
       liveUrl: "#",
       imageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/1512be03-86e4-430e-94e6-55eea4eae171"
+    },
+    {
+      title: "XIA Chatbot",
+      description: "An intelligent conversational AI chatbot with natural language understanding, context-aware responses, and multi-turn conversation capabilities. Designed to provide helpful assistance across various topics.",
+      technology: "AI/ML, Natural Language Processing, Python",
+      category: "Artificial Intelligence",
+      featured: true,
+      githubUrl: "#",
+      liveUrl: "#",
+      imageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/af3e8589-85a2-4123-89bf-405806958397"
     }
   ];
 
