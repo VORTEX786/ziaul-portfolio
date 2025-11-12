@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Github, Instagram, Send, MapPin, Phone } from "lucide-react";
+import { Mail, Github, Send, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
@@ -50,12 +50,6 @@ export default function Contact() {
       icon: Github,
       url: "https://github.com/VORTEX786",
       color: "hover:text-gray-900 dark:hover:text-gray-100"
-    },
-    {
-      name: "Instagram",
-      icon: Instagram,
-      url: "https://instagram.com/op_xvortex",
-      color: "hover:text-pink-500"
     },
     {
       name: "Email",
