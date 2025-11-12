@@ -13,6 +13,7 @@ export const sendContactNotification = internalMutation({
     email: v.string(),
     message: v.string(),
   },
+  returns: v.null(),
   handler: async (ctx, args) => {
     await resend.sendEmail(ctx, {
       from: "noreply@yourdomain.com",
@@ -28,5 +29,6 @@ export const sendContactNotification = internalMutation({
         <p><em>Sent from your portfolio contact form</em></p>
       `,
     });
+    return null;
   },
 });
