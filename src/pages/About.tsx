@@ -15,28 +15,28 @@ export default function About() {
 
   const projects = [
     {
-      name: "Flappy Bird",
-      description: "Classic arcade game recreation with smooth physics and collision detection",
-      tech: "Python, Pygame",
-      category: "Game Development"
+      name: "JARVIS - AI Voice Assistant",
+      description: "An advanced AI-powered voice assistant inspired by Iron Man's JARVIS. Features real-time voice recognition, natural language processing, system monitoring, and conversational AI capabilities.",
+      tech: "Python, Speech Recognition, AI/ML, Natural Language Processing",
+      category: "Artificial Intelligence"
     },
     {
-      name: "Tic Tac Toe",
-      description: "Interactive strategy game with AI opponent and multiplayer modes",
-      tech: "Python",
-      category: "Game Development"
+      name: "Zahrati Study Tracker",
+      description: "A comprehensive study tracking application with focus time management, study ratio analytics, streak tracking, and gamification features including levels and badges.",
+      tech: "React, TypeScript, Tailwind CSS",
+      category: "Web Development"
+    },
+    {
+      name: "XIA Chatbot",
+      description: "An intelligent conversational AI chatbot with natural language understanding, context-aware responses, and multi-turn conversation capabilities. Designed to provide helpful assistance across various topics.",
+      tech: "AI/ML, Natural Language Processing, Python",
+      category: "Artificial Intelligence"
     },
     {
       name: "Chess Game",
-      description: "Full-featured chess implementation with move validation and game logic",
+      description: "Full-featured chess implementation with move validation, check detection, and complete game logic following official chess rules.",
       tech: "Python",
       category: "Game Development"
-    },
-    {
-      name: "Starship vs Aliens",
-      description: "Advanced space shooter with multiple levels, boss battles, and power-ups",
-      tech: "Python, Pygame",
-      category: "Advanced Game Development"
     }
   ];
 
